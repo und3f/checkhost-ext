@@ -1,0 +1,15 @@
+<!ENTITY checkhost "Check-Host">
+
+<!ENTITY action.information "Информация">
+<!ENTITY action.ping "Ping">
+<!ENTITY action.http "HTTP">
+<!ENTITY action.port "Порт">
+<!ENTITY action.dns  "DNS">
+
+<!ENTITY preferences "Настройки">
+<!ENTITY pref.title "Настройки Check-Host">
+<!ENTITY pref.default_action "Действие по умолчанию:">
+<!ENTITY pref.slaves "Количество узлов проверки:">
+<!ENTITY pref.integrate.flagfox "Интегрировать с FlagFox">
+
+<!ENTITY about "Описание">

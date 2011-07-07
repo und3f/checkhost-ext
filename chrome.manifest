@@ -1,0 +1,9 @@
+content checkhost content/
+overlay chrome://browser/content/browser.xul chrome://checkhost/content/checkhost_button.xul
+
+locale checkhost en-US locale/en-US/
+locale checkhost ru-RU locale/ru-RU/
+
+skin checkhost classic/1.0 skin/
+
+resource checkhost resources/

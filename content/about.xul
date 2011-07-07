@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://checkhost/content/checkhost.css" type="text/css?>
+
+<window class="dialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        orient="vertical"
+        autostretch="always"
+        onload="CheckHost.onAboutLoad();"
+        style="-moz-appearance: none;
+               padding: 4px;
+               color: Black;
+               background-color: White;
+               background-image: url('chrome://flagfox/content/mozaic.png') !important;
+               background-repeat: repeat !important;"
+        title="&about.title;">
+
+    <keyset>
+        <key keycode="VK_ESCAPE" oncommand="window.close();"/>
+    </keyset>
+
+    <script type="application/x-javascript"
+        src="chrome://checkhost/content/checkhost.js" />
+
+</window>
