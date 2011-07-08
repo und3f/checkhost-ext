@@ -10,6 +10,7 @@
 <!ENTITY pref.title "Check-Host Preferences">
 <!ENTITY pref.default_action "Default action:">
 <!ENTITY pref.slaves "Number of check points:">
+<!ENTITY pref.open_new_window "Perform checks in new window">
 <!ENTITY pref.integrate.flagfox "Integrate with FlagFox">
 
 <!ENTITY about "About">

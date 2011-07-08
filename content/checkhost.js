@@ -6,6 +6,7 @@ var CheckHost = (function() {
 
     var slaves;
     var default_action;
+    var open_new_window;
 
     var popup;
 
@@ -26,15 +27,19 @@ var CheckHost = (function() {
         //set_default_action(prefs.getCharPref("default_action"));
         //slaves = prefs.getIntPref("slaves");
 
-        var listener = new PrefListener("extensions.checkhost.", function(branch, name) {
-            switch (name) {
-                case "slaves":
-                    slaves = prefs.getIntPref("slaves");
-                    break;
-                case "default_action":
-                    set_default_action(prefs.getCharPref("default_action"));
-                    break;
-            }
+        var listener = new PrefListener("extensions.checkhost.",
+            function(branch, name) {
+                switch (name) {
+                    case "slaves":
+                        slaves = prefs.getIntPref("slaves");
+                        break;
+                    case "default_action":
+                        set_default_action(prefs.getCharPref("default_action"));
+                        break;
+                    case "open_new_window":
+                        open_new_window = prefs.getBoolPref("open_new_window");
+                        break;
+                }
         });
         listener.register(true);
 
@@ -61,8 +66,8 @@ var CheckHost = (function() {
                 +"&host="
                 + encodeURIComponent(target);
 
-        if (popup === undefined || popup.closed) {
-            popup = window.open(url, POPUP_NAME,
+        if (open_new_window || popup === undefined || popup.closed) {
+            popup = window.open(url, open_new_window ? "_blank" : POPUP_NAME,
                 "status,scrollbars,width=770,height=330");
         } else {
             popup.location = url;
@@ -80,16 +85,20 @@ var CheckHost = (function() {
         , check: execute_check
         , aboutDialog: function(event) {
             try {
-                Components.utils.import("resource://gre/modules/AddonManager.jsm");
-                AddonManager.getAddonByID('checkhost@check-host.net', function(addon) {
-                    openDialog("chrome://mozapps/content/extensions/about.xul",
-                        "", "chrome,centerscreen,modal", addon);
+                Components.utils
+                    .import("resource://gre/modules/AddonManager.jsm");
+                AddonManager.getAddonByID('checkhost@check-host.net',
+                    function(addon) {
+                        openDialog(
+                            "chrome://mozapps/content/extensions/about.xul",
+                            "", "chrome,centerscreen,modal", addon);
                 });
             } catch (e) {
-                var extension_manager = Components.classes['@mozilla.org/extensions/manager;1']
+                var extension_manager = Components
+                    .classes['@mozilla.org/extensions/manager;1']
                     .getService(Components.interfaces['nsIExtensionManager']);
-                openDialog('chrome://mozapps/content/extensions/about.xul', '',
-                    'chrome, centerscreen, modal', 
+                openDialog('chrome://mozapps/content/extensions/about.xul',
+                    '', 'chrome, centerscreen, modal', 
                     'urn:mozilla:item:checkhost@check-host.net', 
                     extension_manager.datasource);
             }

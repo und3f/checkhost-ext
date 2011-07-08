@@ -12,6 +12,7 @@
         <preferences>
             <preference id="p.default_action" name="extensions.checkhost.default_action" type="string"/>
             <preference id="p.slaves" name="extensions.checkhost.slaves" type="int"/>
+            <preference id="p.open_new_window" name="extensions.checkhost.open_new_window" type="bool"/>
             <preference id="p.integrate.flagfox" name="extensions.checkhost.integration.flagfox" type="bool"/>
         </preferences>
 
@@ -28,6 +29,8 @@
 
         <label control="default_action" value="&pref.slaves;"/>
         <textbox type="number" min="1" max="10" preference="p.slaves" label="pref.slaves" id="slaves"/>
+
+        <checkbox preference="p.open_new_window" label="&pref.open_new_window;"/>
 
         <!-- <checkbox preference="p.integrate.flagfox" label="&pref.integrate.flagfox;"/> -->
     </prefpane>
