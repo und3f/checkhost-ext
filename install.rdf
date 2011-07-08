@@ -19,7 +19,7 @@
    
     <!-- Front End MetaData -->
     <em:name>Check-Host</em:name>
-    <em:description>Check host availability</em:description>
+    <em:description>Check the availability of host</em:description>
     <em:creator>Sergey Zasenko</em:creator>
     <em:homepageURL>http://check-host.net/</em:homepageURL>
   </Description>      
