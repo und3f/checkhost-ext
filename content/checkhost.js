@@ -19,6 +19,8 @@ var CheckHost = (function() {
     }
 
     var initialize = function() {
+        window.removeEventListener("load", CheckHost.initialize, false);
+
         // Preferences
         var prefs = Components.classes["@mozilla.org/preferences-service;1"]
             .getService(Components.interfaces.nsIPrefService);
@@ -113,5 +115,4 @@ var CheckHost = (function() {
     }
 })()
 
-window.addEventListener("load", function(e) {CheckHost.initialize(e)}, false);
-
+window.addEventListener("load", CheckHost.initialize, false);
