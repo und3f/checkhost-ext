@@ -6,6 +6,7 @@
     <em:id>checkhost@check-host.net</em:id>
     <em:version>0.02</em:version>
     <em:type>2</em:type>
+    <em:iconURL>chrome://checkhost/skin/checkhost-32.png</em:iconURL>
    
     <!-- Target Application this extension can install into, 
          with minimum and maximum supported versions. --> 

@@ -34,7 +34,7 @@
   <statusbar id="status-bar">
       <statusbarpanel id="chStatusBar" rooltiptext="&checkhost;" >
           <toolbarbutton type="menu-button" id="chStatusIcon"
-                  image="chrome://checkhost/content/checkhost.png"
+                  image="chrome://checkhost/skin/checkhost-16.png"
                   command="cmd_check_default">
               <menupopup>
                   <menuitem id="menu_status_info" label="&action.information;" command="cmd_info"/>
