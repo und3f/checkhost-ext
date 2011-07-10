@@ -6,7 +6,7 @@ var CheckHost = new (function() {
 
     var slaves;
     var default_action;
-    var open_new_window;
+    var use_popup;
 
     var popup;
 
@@ -38,9 +38,9 @@ var CheckHost = new (function() {
                         set_default_action(
                             prefs.getCharPref("default_action"));
                         break;
-                    case "open_new_window":
-                        open_new_window =
-                            prefs.getBoolPref("open_new_window");
+                    case "use_popup":
+                        use_popup =
+                            prefs.getBoolPref("use_popup");
                         break;
                     }
             });
@@ -65,15 +65,20 @@ var CheckHost = new (function() {
         }
 
         var url = "http://check-host.net/check-" + check_type 
-                + "?minimal=1&slaves_limit=" + slaves 
+                + "?&slaves_limit=" + slaves 
                 +"&host="
                 + encodeURIComponent(target);
 
-        if (open_new_window || popup === undefined || popup.closed) {
-            popup = window.open(url, open_new_window ? "_blank" : POPUP_NAME,
-                "status,scrollbars,width=770,height=330");
+        if (!use_popup) {
+            content.window.location = url;
         } else {
-            popup.location = url;
+            url += "&minimal=1";
+            if (popup === undefined || popup.closed) {
+                popup = window.open(url, POPUP_NAME,
+                    "status,scrollbars,width=770,height=330");
+            } else {
+                popup.location = url;
+            }
         }
 
         popup.focus();
