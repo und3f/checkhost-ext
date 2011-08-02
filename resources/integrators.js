@@ -1,6 +1,6 @@
-var EXPORTED_SYMBOLS = ["FlagFoxIntegration"];
+var EXPORTED_SYMBOLS = ["CheckHostFlagFoxIntegration"];
 
-function FlagFoxIntegration() {
+function CheckHostFlagFoxIntegration() {
     const actions_config_branch = "flagfox.";
     const actions_config_pref   = "actions";
     

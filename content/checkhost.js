@@ -12,11 +12,11 @@ var CheckHost = new (function() {
 
     var set_default_action = function(new_default_action) {
         if (default_action !== undefined)
-            document.getElementById("menu_status_" + default_action)
+            document.getElementById("ch-menu-status-" + default_action)
                 .removeAttribute("default");
 
         default_action = new_default_action;
-        document.getElementById("menu_status_" + default_action)
+        document.getElementById("ch-menu-status-" + default_action)
             .setAttribute("default", true);
     }
 
@@ -28,7 +28,7 @@ var CheckHost = new (function() {
             .getService(Components.interfaces.nsIPrefService);
         prefs = prefs.getBranch("extensions.checkhost.");
 
-        var listener = new PrefListener("extensions.checkhost.",
+        var listener = new CheckHostPrefListener("extensions.checkhost.",
             function(branch, name) {
                 switch (name) {
                     case "slaves":

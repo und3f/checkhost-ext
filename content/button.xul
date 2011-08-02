@@ -7,44 +7,42 @@
 <overlay id="checkhost" 
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <script type="application/x-javascript">
-      command_names = {
-        "ch"   : "&checkhost;",
-        "ping" : "&action.ping;",
-        "http" : "&action.http;",
-        "tcp" : "&action.port;",
-      }
-  </script>
-
   <script type="application/x-javascript"
       src="chrome://checkhost/content/checkhost.js" />
 
   <commandset>
-      <command id="cmd_check_default" oncommand="CheckHost.check(event)"/>
-      <command id="cmd_info" oncommand="CheckHost.check(event, 'info')"/>
-      <command id="cmd_ping" oncommand="CheckHost.check(event, 'ping')"/>
-      <command id="cmd_http" oncommand="CheckHost.check(event, 'http')"/>
-      <command id="cmd_ping" oncommand="CheckHost.check(event, 'ping')"/>
-      <command id="cmd_port" oncommand="CheckHost.check(event, 'tcp')"/>
-      <command id="cmd_dns" oncommand="CheckHost.check(event, 'dns')"/>
-      <command id="cmd_about" oncommand="CheckHost.aboutDialog(event)"/>
-      <command id="cmd_pref" oncommand="CheckHost.prefDialog(event)"/>
+      <command id="ch-cmd-check-default" oncommand="CheckHost.check(event)"/>
+      <command id="ch-cmd-info" oncommand="CheckHost.check(event, 'info')"/>
+      <command id="ch-cmd-ping" oncommand="CheckHost.check(event, 'ping')"/>
+      <command id="ch-cmd-http" oncommand="CheckHost.check(event, 'http')"/>
+      <command id="ch-cmd-ping" oncommand="CheckHost.check(event, 'ping')"/>
+      <command id="ch-cmd-port" oncommand="CheckHost.check(event, 'tcp')"/>
+      <command id="ch-cmd-dns" oncommand="CheckHost.check(event, 'dns')"/>
+      <command id="ch-cmd-about" oncommand="CheckHost.aboutDialog(event)"/>
+      <command id="ch-cmd-pref" oncommand="CheckHost.prefDialog(event)"/>
   </commandset>
 
   <statusbar id="status-bar">
-      <statusbarpanel id="chStatusBar" rooltiptext="&checkhost;" >
-          <toolbarbutton type="menu-button" id="chStatusIcon"
+      <statusbarpanel id="ch-status-bar" rooltiptext="&checkhost;" >
+          <toolbarbutton type="menu-button" id="ch-status-icon"
                   image="chrome://checkhost/skin/checkhost-16.png"
-                  command="cmd_check_default">
+                  command="ch-cmd-check-default">
               <menupopup>
-                  <menuitem id="menu_status_info" label="&action.information;" command="cmd_info"/>
-                  <menuitem id="menu_status_ping" label="&action.ping;" command="cmd_ping"/>
-                  <menuitem id="menu_status_http" label="&action.http;" command="cmd_http"/>
-                  <menuitem id="menu_status_port" label="&action.port;" command="cmd_port"/>
-                  <menuitem id="menu_status_dns"  label="&action.dns;"  command="cmd_dns"/>
+                  <menuitem id="ch-menu-status-info"
+                      label="&action.information;" command="ch-cmd-info"/>
+                  <menuitem id="ch-menu-status-ping" label="&action.ping;"
+                      command="ch-cmd-ping"/>
+                  <menuitem id="ch-menu-status-http" label="&action.http;"
+                      command="ch-cmd-http"/>
+                  <menuitem id="ch-menu-status-port" label="&action.port;"
+                      command="ch-cmd-port"/>
+                  <menuitem id="ch-menu-status-dns"  label="&action.dns;"
+                      command="ch-cmd-dns"/>
                   <menuseparator/>
-                  <menuitem id="menu_preferences" label="&preferences;" command="cmd_pref"/>
-                  <menuitem id="aboutName" label="&about;" command="cmd_about"/>
+                  <menuitem id="ch-preferences" label="&preferences;"
+                      command="ch-cmd-pref"/>
+                  <menuitem id="ch-about" label="&about;"
+                      command="ch-cmd-about"/>
               </menupopup>
           </toolbarbutton>
       </statusbarpanel>

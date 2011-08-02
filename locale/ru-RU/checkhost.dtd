@@ -8,9 +8,9 @@
 
 <!ENTITY preferences "Настройки">
 <!ENTITY pref.title "Настройки Check-Host">
-<!ENTITY pref.default_action "Действие по умолчанию:">
+<!ENTITY pref.default-action "Действие по умолчанию:">
 <!ENTITY pref.slaves "Количество узлов проверки:">
-<!ENTITY pref.use_popup "Выполнять проверки во всплывающем окне">
+<!ENTITY pref.use-popup "Выполнять проверки во всплывающем окне">
 <!ENTITY pref.integrate.flagfox "Интегрировать с FlagFox">
 
 <!ENTITY about "Описание">
