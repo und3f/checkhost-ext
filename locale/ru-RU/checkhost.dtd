@@ -5,6 +5,8 @@
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Порт">
 <!ENTITY action.dns  "DNS">
+<!ENTITY action.check-website "Проверить этот веб-сайт">
+<!ENTITY action.check-link "Проверить эту ссылку">
 
 <!ENTITY preferences "Настройки">
 <!ENTITY pref.title "Настройки Check-Host">

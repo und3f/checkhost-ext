@@ -12,6 +12,7 @@
 
   <commandset>
       <command id="ch-cmd-check-default" oncommand="CheckHost.check(event)"/>
+      <command id="ch-cmd-check-link" oncommand="CheckHost.checkLink(event)"/>
       <command id="ch-cmd-info" oncommand="CheckHost.check(event, 'info')"/>
       <command id="ch-cmd-ping" oncommand="CheckHost.check(event, 'ping')"/>
       <command id="ch-cmd-http" oncommand="CheckHost.check(event, 'http')"/>
@@ -21,6 +22,16 @@
       <command id="ch-cmd-about" oncommand="CheckHost.aboutDialog(event)"/>
       <command id="ch-cmd-pref" oncommand="CheckHost.prefDialog(event)"/>
   </commandset>
+
+  <popup id="contentAreaContextMenu">
+      <menuitem id="ch-context-check-website"
+          class="menuitem-iconic" insertafter="context-bookmarkpage"
+          label="&action.check-website;" command="ch-cmd-check-default"/>
+
+      <menuitem id="ch-context-check-link"
+          class="menuitem-iconic" insertafter="context-bookmarklink"
+          label="&action.check-link;" command="ch-cmd-check-link"/>
+  </popup>
 
   <menupopup id="menu_ToolsPopup">
     <menu id="ch-tools-menu" label="&checkhost;"

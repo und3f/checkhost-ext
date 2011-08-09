@@ -1,10 +1,13 @@
 <!ENTITY checkhost "Check-Host">
 
+
 <!ENTITY action.information "Information">
 <!ENTITY action.ping "Ping">
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Port">
 <!ENTITY action.dns  "DNS">
+<!ENTITY action.check-website "Check this website">
+<!ENTITY action.check-link "Check this link">
 
 <!ENTITY preferences "Preferences">
 <!ENTITY pref.title "Check-Host Preferences">

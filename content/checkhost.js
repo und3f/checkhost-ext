@@ -46,14 +46,27 @@ var CheckHost = new (function() {
             });
             listener.register(true);
 
+        document.getElementById('contentAreaContextMenu')
+            .addEventListener('popupshowing', function(event) {
+                var onDocument=!(
+                    gContextMenu.isContentSelected ||
+                    gContextMenu.onTextInput ||
+                    gContextMenu.onLink || gContextMenu.onImage
+                );
+
+                document.getElementById('ch-context-check-website')
+                    .setAttribute('hidden', !onDocument);
+
+                document.getElementById('ch-context-check-link')
+                    .setAttribute('hidden', !gContextMenu.onLink);
+            }, false);
+
         //gBrowser.addEventListener('DOMContentLoaded', on_page_load, true);
     };
-        
-    this.check = function(event, check_type) {
+
+    this.checkURL = function(target, check_type) {
         if (check_type === undefined)
             check_type = default_action;
-
-        var target = content.window.location;
 
         if (content.window.name === POPUP_NAME) {
             popup = content.window;
@@ -79,11 +92,25 @@ var CheckHost = new (function() {
             } else {
                 popup.location = url;
             }
+            popup.focus();
         }
-
-        popup.focus();
+    }
+        
+    this.check = function(event, check_type) {
+        var target = content.window.location;
+        this.checkURL(target);
         event.stopPropagation();
     };
+
+    this.checkLink = function(event) {
+        var el=document.popupNode;
+        while (el && el.tagName && 'A'!=el.tagName.toUpperCase()) {
+            el=el.parentNode;
+        };
+
+        this.checkURL(el.href);
+        event.stopPropagation();
+    }
 
     this.aboutDialog = function(event) {
         try {
