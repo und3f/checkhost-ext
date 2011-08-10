@@ -7,6 +7,7 @@
     <em:version>1.02</em:version>
     <em:type>2</em:type>
     <em:iconURL>chrome://checkhost/skin/checkhost-32.png</em:iconURL>
+    <em:optionsURL>chrome://checkhost/content/preferences.xul</em:optionsURL>
    
     <!-- Target Application this extension can install into, 
          with minimum and maximum supported versions. --> 
