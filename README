@@ -1,0 +1,23 @@
+Check-Host Firefox extension
+http://check-host.net/
+
+DESCRIPTION
+
+    Check availability of hosts, DNS records, IP addresses from different
+    locations. All check are performed with http://check-host.net/
+
+    It allows to check:
+     - host information;
+     - HTTP service availability;
+     - TCP port access;
+     - DNS records
+
+BUILD
+    To build an extension run `make'
+
+SUPPORT
+    All issues must be send to
+        https://github.com/und3f/checkhost-ext/issues
+
+    Extension's page on AMO
+        https://addons.mozilla.org/firefox/addon/check-host/
