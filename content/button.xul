@@ -63,7 +63,7 @@
               <menupopup>
                   <menuitem id="ch-status-info"
                       label="&action.information;" command="ch-cmd-info"/>
-                  <menuitem id="ch-statusbar-ping" label="&action.ping;"
+                  <menuitem id="ch-status-ping" label="&action.ping;"
                       command="ch-cmd-ping"/>
                   <menuitem id="ch-status-http" label="&action.http;"
                       command="ch-cmd-http"/>
