@@ -105,7 +105,7 @@ var CheckHost = new (function() {
         
     this.check = function(event, check_type) {
         var target = content.window.location;
-        this.checkURL(target);
+        this.checkURL(target, check_type);
         event.stopPropagation();
     };
 
