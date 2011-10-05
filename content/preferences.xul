@@ -16,8 +16,10 @@
                 type="int"/>
             <preference id="p.use-popup" name="extensions.checkhost.use_popup"
                 type="bool"/>
+            <preference id="p.integration.context"
+                name="extensions.checkhost.integration.context" type="bool"/>
             <!--
-            <preference id="p.integrate.flagfox"
+            <preference id="p.integration.flagfox"
                 name="extensions.checkhost.integration.flagfox" type="bool"/>
             -->
         </preferences>
@@ -40,6 +42,9 @@
 
         <checkbox preference="p.use-popup" label="&pref.use-popup;"/>
 
-        <!-- <checkbox preference="p.integrate.flagfox" label="&pref.integrate.flagfox;"/> -->
+        <checkbox preference="p.integration.context"
+            label="&pref.integration.context;"/>
+
+        <!-- <checkbox preference="p.integration.flagfox" label="&pref.integration.flagfox;"/> -->
     </prefpane>
 </prefwindow>

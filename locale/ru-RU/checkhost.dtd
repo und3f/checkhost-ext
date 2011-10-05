@@ -13,6 +13,7 @@
 <!ENTITY pref.default-action "Действие по умолчанию:">
 <!ENTITY pref.slaves "Количество узлов проверки:">
 <!ENTITY pref.use-popup "Выполнять проверки во всплывающем окне">
-<!ENTITY pref.integrate.flagfox "Интегрировать с FlagFox">
+<!ENTITY pref.integration.context "Интегрировать в контекстное меню">
+<!ENTITY pref.integration.flagfox "Интегрировать с FlagFox">
 
 <!ENTITY about "Описание">

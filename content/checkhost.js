@@ -7,6 +7,7 @@ var CheckHost = new (function() {
     var slaves;
     var default_action;
     var use_popup;
+    var context_integration;
 
     var popup;
 
@@ -42,6 +43,10 @@ var CheckHost = new (function() {
                         use_popup =
                             prefs.getBoolPref("use_popup");
                         break;
+                    case "integration.context":
+                        context_integration =
+                            prefs.getBoolPref("integration.context");
+                        break;
                     }
             });
             listener.register(true);
@@ -55,10 +60,12 @@ var CheckHost = new (function() {
                 );
 
                 document.getElementById('ch-context-check-website')
-                    .setAttribute('hidden', !onDocument);
+                    .setAttribute('hidden',
+                        !(context_integration && onDocument));
 
                 document.getElementById('ch-context-check-link')
-                    .setAttribute('hidden', !gContextMenu.onLink);
+                    .setAttribute('hidden',
+                        !(context_integration && gContextMenu.onLink));
             }, false);
 
         //gBrowser.addEventListener('DOMContentLoaded', on_page_load, true);
