@@ -11,6 +11,8 @@ DESCRIPTION
      - TCP port access;
      - DNS records
 
+    Can be called from the context menu or network error page.
+
 BUILD
     To build an extension run `make'
 
