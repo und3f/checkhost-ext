@@ -14,6 +14,7 @@
 <!ENTITY pref.slaves "Number of check points:">
 <!ENTITY pref.use-popup "Perform checks in popup">
 <!ENTITY pref.integration.context "Integrate into context menu">
+<!ENTITY pref.integration.neterror "Integrate into network error page">
 <!ENTITY pref.integration.flagfox "Integrate with FlagFox">
 
 <!ENTITY about "About">

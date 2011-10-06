@@ -18,6 +18,8 @@
                 type="bool"/>
             <preference id="p.integration.context"
                 name="extensions.checkhost.integration.context" type="bool"/>
+            <preference id="p.integration.neterror"
+                name="extensions.checkhost.integration.neterror" type="bool"/>
             <!--
             <preference id="p.integration.flagfox"
                 name="extensions.checkhost.integration.flagfox" type="bool"/>
@@ -44,6 +46,9 @@
 
         <checkbox preference="p.integration.context"
             label="&pref.integration.context;"/>
+
+        <checkbox preference="p.integration.neterror"
+            label="&pref.integration.neterror;"/>
 
         <!-- <checkbox preference="p.integration.flagfox" label="&pref.integration.flagfox;"/> -->
     </prefpane>

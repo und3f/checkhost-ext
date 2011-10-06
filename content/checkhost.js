@@ -47,6 +47,14 @@ var CheckHost = new (function() {
                         context_integration =
                             prefs.getBoolPref("integration.context");
                         break;
+                    case "integration.neterror":
+                        if (prefs.getBoolPref("integration.neterror"))
+                            gBrowser.addEventListener(
+                                'DOMContentLoaded', on_page_load, false);
+                        else
+                            gBrowser.removeEventListener(
+                                'DOMContentLoaded', on_page_load, false);
+                        break;
                     }
             });
             listener.register(true);
@@ -68,7 +76,6 @@ var CheckHost = new (function() {
                         !(context_integration && gContextMenu.onLink));
             }, false);
 
-        gBrowser.addEventListener('DOMContentLoaded', on_page_load, false);
     };
 
     this.checkURL = function(target, check_type) {
