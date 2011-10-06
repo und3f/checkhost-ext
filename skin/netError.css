@@ -1,0 +1,19 @@
+#ch-neterror {
+    vertical-align: top;
+    margin-top: 1em;
+    -moz-margin-start: 80px;
+    -moz-padding-end: 3em;
+}
+
+#ch-neterror > fieldset {
+    -moz-border-radius: 10px;
+}
+
+#ch-neterror > fieldset > legend > img {
+    position: relative;
+    top: 3px;
+}
+
+#ch-neterror button {
+    width: 10em;
+}

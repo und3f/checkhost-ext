@@ -68,7 +68,7 @@ var CheckHost = new (function() {
                         !(context_integration && gContextMenu.onLink));
             }, false);
 
-        //gBrowser.addEventListener('DOMContentLoaded', on_page_load, true);
+        gBrowser.addEventListener('DOMContentLoaded', on_page_load, false);
     };
 
     this.checkURL = function(target, check_type) {
@@ -117,6 +117,45 @@ var CheckHost = new (function() {
 
         this.checkURL(el.href);
         event.stopPropagation();
+    }
+
+    var on_page_load = function(event) {
+        var contentDoc=event.target;
+        var contentWin=contentDoc.defaultView;
+
+        if (contentDoc.documentURI.match(/^about:neterror/)) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'chrome://checkhost/content/netError.xhtml', false);
+            xhr.send(null);
+
+            var node_orig = xhr.responseXML
+                .getElementById('ch-neterror');
+            var container = contentDoc.getElementById('errorPageContainer');
+
+            var node = contentDoc.adoptNode(node_orig);
+            container.appendChild(node);
+
+            // ...including the CSS.
+            var link = contentDoc.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', 'chrome://checkhost/skin/netError.css');
+            link.setAttribute('type', 'text/css');
+            link.setAttribute('media', 'all');
+            contentDoc.getElementsByTagName('head')[0].appendChild(link);
+
+            var setup_handler = function(id, action_param) {
+                contentDoc.getElementById(id).addEventListener(
+                    'click',
+                    function(event){CheckHost.check(event, action_param)},
+                    false);
+            };
+
+            setup_handler('ch-item-info', 'info');
+            setup_handler('ch-item-ping', 'ping');
+            setup_handler('ch-item-http', 'http');
+            setup_handler('ch-item-port', 'tcp');
+            setup_handler('ch-item-dns', 'dns');
+        }
     }
 
     this.aboutDialog = function(event) {
