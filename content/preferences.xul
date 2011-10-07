@@ -26,29 +26,38 @@
             -->
         </preferences>
 
-        <label control="ch-default-action" value="&pref.default-action;"/>
-        <menulist id="ch-default-action" preference="p.default-action">
-            <menupopup>
-                <menuitem label="&action.information;" value="info"/>
-                <menuitem label="&action.ping;" value="ping"/>
-                <menuitem label="&action.http;" value="http"/>
-                <menuitem label="&action.port;" value="tcp"/>
-                <menuitem label="&action.dns;"  value="dns"/>
-            </menupopup>
-        </menulist>
+        <groupbox>
+            <caption label="&pref.main;" />
 
-        <label control="ch-slaves" value="&pref.slaves;"/>
-        <textbox id="ch-slaves"
-            type="number" min="1" max="10" preference="p.slaves"
-            label="pref.slaves"/>
+            <label control="ch-default-action" value="&pref.default-action;"/>
+            <menulist id="ch-default-action" preference="p.default-action">
+                <menupopup>
+                    <menuitem label="&action.information;" value="info"/>
+                    <menuitem label="&action.ping;" value="ping"/>
+                    <menuitem label="&action.http;" value="http"/>
+                    <menuitem label="&action.port;" value="tcp"/>
+                    <menuitem label="&action.dns;"  value="dns"/>
+                </menupopup>
+            </menulist>
 
-        <checkbox preference="p.use-popup" label="&pref.use-popup;"/>
+            <label control="ch-slaves" value="&pref.slaves;"/>
+            <textbox id="ch-slaves"
+                type="number" min="1" max="10" preference="p.slaves"
+                label="pref.slaves"/>
+        </groupbox>
 
-        <checkbox preference="p.integration.context"
-            label="&pref.integration.context;"/>
+        <groupbox>
+            <caption label="&pref.interface;" />
 
-        <checkbox preference="p.integration.neterror"
-            label="&pref.integration.neterror;"/>
+            <checkbox preference="p.use-popup"
+                label="&pref.interface.popup;"/>
+
+            <checkbox preference="p.integration.context"
+                label="&pref.interface.context;"/>
+
+            <checkbox preference="p.integration.neterror"
+                label="&pref.interface.neterror;"/>
+        </groupbox>
 
         <!-- <checkbox preference="p.integration.flagfox" label="&pref.integration.flagfox;"/> -->
     </prefpane>

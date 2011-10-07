@@ -5,16 +5,18 @@
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Порт">
 <!ENTITY action.dns  "DNS">
-<!ENTITY action.check-website "Проверить этот веб-сайт">
-<!ENTITY action.check-link "Проверить эту ссылку">
+<!ENTITY action.check-website "Проверить веб-сайт">
+<!ENTITY action.check-link "Проверить ссылку">
 
 <!ENTITY preferences "Настройки">
 <!ENTITY pref.title "Настройки Check-Host">
+<!ENTITY pref.main "Главные">
 <!ENTITY pref.default-action "Действие по умолчанию:">
 <!ENTITY pref.slaves "Количество узлов проверки:">
-<!ENTITY pref.use-popup "Выполнять проверки во всплывающем окне">
-<!ENTITY pref.integration.context "Интегрировать в контекстное меню">
-<!ENTITY pref.integration.neterror "Интегрировать в страницу сетевой ошибки">
+<!ENTITY pref.interface "Интерфейс">
+<!ENTITY pref.interface.popup "Результаты во всплывающем окне">
+<!ENTITY pref.interface.context "Отображать в контекстном меню">
+<!ENTITY pref.interface.neterror "Отображать на странице сетевой ошибки">
 <!ENTITY pref.integration.flagfox "Интегрировать с FlagFox">
 
 <!ENTITY about "Описание">

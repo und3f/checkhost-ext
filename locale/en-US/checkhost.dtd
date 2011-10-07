@@ -5,16 +5,18 @@
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Port">
 <!ENTITY action.dns  "DNS">
-<!ENTITY action.check-website "Check this website">
-<!ENTITY action.check-link "Check this link">
+<!ENTITY action.check-website "Check Web Site">
+<!ENTITY action.check-link "Check Link">
 
 <!ENTITY preferences "Preferences">
 <!ENTITY pref.title "Check-Host Preferences">
+<!ENTITY pref.main "Main">
 <!ENTITY pref.default-action "Default action:">
 <!ENTITY pref.slaves "Number of check points:">
-<!ENTITY pref.use-popup "Perform checks in popup">
-<!ENTITY pref.integration.context "Integrate into context menu">
-<!ENTITY pref.integration.neterror "Integrate into network error page">
+<!ENTITY pref.interface "Interface">
+<!ENTITY pref.interface.popup "Results in a popup window">
+<!ENTITY pref.interface.context "Appear in the context menu">
+<!ENTITY pref.interface.neterror "Appear on the network error page">
 <!ENTITY pref.integration.flagfox "Integrate with FlagFox">
 
 <!ENTITY about "About">
