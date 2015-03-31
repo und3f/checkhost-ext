@@ -49,8 +49,10 @@
         <groupbox>
             <caption label="&pref.interface;" />
 
+            <!--
             <checkbox preference="p.use-popup"
                 label="&pref.interface.popup;"/>
+                -->
 
             <checkbox preference="p.integration.context"
                 label="&pref.interface.context;"/>

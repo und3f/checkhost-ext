@@ -40,8 +40,8 @@ var CheckHost = new (function() {
                             prefs.getCharPref("default_action"));
                         break;
                     case "use_popup":
-                        use_popup =
-                            prefs.getBoolPref("use_popup");
+                        use_popup = false;
+                            // prefs.getBoolPref("use_popup");
                         break;
                     case "integration.context":
                         context_integration =
