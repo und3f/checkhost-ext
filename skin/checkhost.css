@@ -1,4 +1,4 @@
-#ch-tools-menu, #ch-status-icon,
+#ch-tools-menu, #ch-toolbar-button,
 #ch-context-check-website, #ch-context-check-link {
     list-style-image: url(chrome://checkhost/skin/checkhost-16.png);
 }

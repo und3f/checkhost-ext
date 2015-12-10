@@ -35,24 +35,24 @@
   </popup>
 
   <toolbarpalette id="BrowserToolbarPalette">
-    <toolbarbutton type="menu-button" id="ch-status-icon"
+    <toolbarbutton type="menu-button" id="ch-toolbar-button"
             label="&checkhost;" tooltiptext="&checkhost;"
             command="ch-cmd-check-default">
         <menupopup>
-            <menuitem id="ch-status-info"
+            <menuitem id="ch-button-info"
                 label="&action.information;" command="ch-cmd-info"/>
-            <menuitem id="ch-status-ping" label="&action.ping;"
+            <menuitem id="ch-button-ping" label="&action.ping;"
                 command="ch-cmd-ping"/>
-            <menuitem id="ch-status-http" label="&action.http;"
+            <menuitem id="ch-button-http" label="&action.http;"
                 command="ch-cmd-http"/>
-            <menuitem id="ch-status-port" label="&action.port;"
+            <menuitem id="ch-button-port" label="&action.port;"
                 command="ch-cmd-port"/>
-            <menuitem id="ch-status-dns"  label="&action.dns;"
+            <menuitem id="ch-button-dns"  label="&action.dns;"
                 command="ch-cmd-dns"/>
             <menuseparator/>
-            <menuitem id="ch-status-preferences" label="&preferences;"
+            <menuitem id="ch-button-preferences" label="&preferences;"
                 command="ch-cmd-pref"/>
-            <menuitem id="ch-status-about" label="&about;"
+            <menuitem id="ch-button-about" label="&about;"
                 command="ch-cmd-about"/>
         </menupopup>
     </toolbarbutton>

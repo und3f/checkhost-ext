@@ -8,11 +8,11 @@ var CheckHost = new (function() {
 
     var set_default_action = function(new_default_action) {
         if (default_action !== undefined)
-            document.getElementById("ch-status-" + default_action)
+            document.getElementById("ch-button-" + default_action)
                 .removeAttribute("default");
 
         default_action = new_default_action;
-        document.getElementById("ch-status-" + default_action)
+        document.getElementById("ch-button-" + default_action)
             .setAttribute("default", true);
     }
 
