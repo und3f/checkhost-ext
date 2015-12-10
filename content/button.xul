@@ -19,6 +19,7 @@
       <command id="ch-cmd-ping" oncommand="CheckHost.check(event, 'ping')"/>
       <command id="ch-cmd-port" oncommand="CheckHost.check(event, 'tcp')"/>
       <command id="ch-cmd-dns" oncommand="CheckHost.check(event, 'dns')"/>
+      <command id="ch-cmd-udp" oncommand="CheckHost.check(event, 'udp')"/>
       <command id="ch-cmd-about" oncommand="CheckHost.aboutDialog(event)"/>
       <command id="ch-cmd-pref" oncommand="CheckHost.prefDialog(event)"/>
   </commandset>
@@ -47,6 +48,8 @@
               command="ch-cmd-port"/>
           <menuitem id="ch-menu-dns" label="&action.dns;"
               command="ch-cmd-dns"/>
+          <menuitem id="ch-menu-udp" label="&action.udp;"
+              command="ch-cmd-udp"/>
           <menuseparator/>
           <menuitem id="ch-menu-preferences" label="&preferences;"
               command="ch-cmd-pref"/>

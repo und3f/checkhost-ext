@@ -5,6 +5,7 @@
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Порт">
 <!ENTITY action.dns  "DNS">
+<!ENTITY action.udp  "UDP">
 <!ENTITY action.check-website "Проверить веб-сайт">
 <!ENTITY action.check-link "Проверить ссылку">
 
@@ -14,7 +15,7 @@
 <!ENTITY pref.default-action "Действие по умолчанию:">
 <!ENTITY pref.slaves "Количество узлов проверки:">
 <!ENTITY pref.interface "Интерфейс">
-<!ENTITY pref.interface.popup "Результаты во всплывающем окне">
+<!ENTITY pref.interface.newtab "Открывать результаты в новой вкладке">
 <!ENTITY pref.interface.context "Отображать в контекстном меню">
 <!ENTITY pref.interface.neterror "Отображать на странице сетевой ошибки">
 <!ENTITY pref.integration.flagfox "Интегрировать с FlagFox">

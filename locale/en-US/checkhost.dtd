@@ -5,6 +5,7 @@
 <!ENTITY action.http "HTTP">
 <!ENTITY action.port "Port">
 <!ENTITY action.dns  "DNS">
+<!ENTITY action.udp  "UDP">
 <!ENTITY action.check-website "Check Web Site">
 <!ENTITY action.check-link "Check Link">
 
@@ -14,7 +15,7 @@
 <!ENTITY pref.default-action "Default action:">
 <!ENTITY pref.slaves "Number of check points:">
 <!ENTITY pref.interface "Interface">
-<!ENTITY pref.interface.popup "Results in a popup window">
+<!ENTITY pref.interface.newtab "Open results in a new tab">
 <!ENTITY pref.interface.context "Appear in the context menu">
 <!ENTITY pref.interface.neterror "Appear on the network error page">
 <!ENTITY pref.integration.flagfox "Integrate with FlagFox">

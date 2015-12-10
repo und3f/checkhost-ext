@@ -14,7 +14,7 @@
                 name="extensions.checkhost.default_action" type="string"/>
             <preference id="p.slaves" name="extensions.checkhost.slaves"
                 type="int"/>
-            <preference id="p.use-popup" name="extensions.checkhost.use_popup"
+            <preference id="p.use-new-tab" name="extensions.checkhost.use_new_tab"
                 type="bool"/>
             <preference id="p.integration.context"
                 name="extensions.checkhost.integration.context" type="bool"/>
@@ -37,6 +37,7 @@
                     <menuitem label="&action.http;" value="http"/>
                     <menuitem label="&action.port;" value="tcp"/>
                     <menuitem label="&action.dns;"  value="dns"/>
+                    <menuitem label="&action.udp;"  value="udp"/>
                 </menupopup>
             </menulist>
 
@@ -49,10 +50,8 @@
         <groupbox>
             <caption label="&pref.interface;" />
 
-            <!--
-            <checkbox preference="p.use-popup"
-                label="&pref.interface.popup;"/>
-                -->
+            <checkbox preference="p.use-new-tab"
+                label="&pref.interface.newtab;"/>
 
             <checkbox preference="p.integration.context"
                 label="&pref.interface.context;"/>

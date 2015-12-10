@@ -2,14 +2,9 @@
 Components.utils.import("resource://checkhost/pref_listener.js");
 
 var CheckHost = new (function() {
-    const POPUP_NAME = "checkhost-check-popup";
-
     var slaves;
     var default_action;
-    var use_popup;
     var context_integration;
-
-    var popup;
 
     var set_default_action = function(new_default_action) {
         if (default_action !== undefined)
@@ -39,9 +34,10 @@ var CheckHost = new (function() {
                         set_default_action(
                             prefs.getCharPref("default_action"));
                         break;
-                    case "use_popup":
-                        use_popup = false;
-                            // prefs.getBoolPref("use_popup");
+                    case "use_new_tab":
+                        var use_new_tab = prefs.getBoolPref("use_new_tab");
+                        CheckHost.open_window = prefs.getBoolPref("use_new_tab") ? 
+                            CheckHost.open_new_tab : CheckHost.open_in_current_window;
                         break;
                     case "integration.context":
                         context_integration =
@@ -82,32 +78,12 @@ var CheckHost = new (function() {
         if (check_type === undefined)
             check_type = default_action;
 
-        if (content.window.name === POPUP_NAME) {
-            popup = content.window;
-
-            var host_match = /host=([^\&]+)(&|$)/.exec(popup.location.search);
-            if (host_match !== null) {
-                target = decodeURIComponent(host_match[1]);
-            }
-        }
-
         var url = "http://check-host.net/check-" + check_type 
                 + "?&slaves_limit=" + slaves 
                 +"&host="
                 + encodeURIComponent(target);
 
-        if (!use_popup) {
-            content.window.location = url;
-        } else {
-            url += "&minimal=1";
-            if (popup === undefined || popup.closed) {
-                popup = window.open(url, POPUP_NAME,
-                    "status,scrollbars,width=770,height=330");
-            } else {
-                popup.location = url;
-            }
-            popup.focus();
-        }
+        this.open_window(url);
     }
         
     this.check = function(event, check_type) {
@@ -162,8 +138,20 @@ var CheckHost = new (function() {
             setup_handler('ch-item-http', 'http');
             setup_handler('ch-item-port', 'tcp');
             setup_handler('ch-item-dns', 'dns');
+            setup_handler('ch-item-udp', 'udp');
         }
     }
+
+    this.open_in_current_window = function(url) {
+        content.window.location = url;
+    }
+
+    this.open_new_tab = function(url) {
+        var tab = gBrowser.addTab(url);
+        gBrowser.selectedTab = tab;
+    }
+
+    this.open_window = this.open_in_current_window;
 
     this.aboutDialog = function(event) {
         try {
