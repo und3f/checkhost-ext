@@ -34,53 +34,27 @@
           label="&action.check-link;" command="ch-cmd-check-link"/>
   </popup>
 
-  <menupopup id="menu_ToolsPopup">
-    <menu id="ch-tools-menu" label="&checkhost;"
-        insertafter="devToolsSeparator" class="menu-iconic">
-      <menupopup id="ch-tools-popup">
-          <menuitem id="ch-menu-info"
-              label="&action.information;" command="ch-cmd-info"/>
-          <menuitem id="ch-menu-ping" label="&action.ping;"
-              command="ch-cmd-ping"/>
-          <menuitem id="ch-menu-http" label="&action.http;"
-              command="ch-cmd-http"/>
-          <menuitem id="ch-menu-port" label="&action.port;"
-              command="ch-cmd-port"/>
-          <menuitem id="ch-menu-dns" label="&action.dns;"
-              command="ch-cmd-dns"/>
-          <menuitem id="ch-menu-udp" label="&action.udp;"
-              command="ch-cmd-udp"/>
-          <menuseparator/>
-          <menuitem id="ch-menu-preferences" label="&preferences;"
-              command="ch-cmd-pref"/>
-          <menuitem id="ch-menu-about" label="&about;"
-              command="ch-cmd-about"/>
-      </menupopup>
-    </menu>
-  </menupopup>
-
-  <statusbar id="status-bar">
-      <statusbarpanel id="ch-status-bar" rooltiptext="&checkhost;" >
-          <toolbarbutton type="menu-button" id="ch-status-icon"
-                  command="ch-cmd-check-default">
-              <menupopup>
-                  <menuitem id="ch-status-info"
-                      label="&action.information;" command="ch-cmd-info"/>
-                  <menuitem id="ch-status-ping" label="&action.ping;"
-                      command="ch-cmd-ping"/>
-                  <menuitem id="ch-status-http" label="&action.http;"
-                      command="ch-cmd-http"/>
-                  <menuitem id="ch-status-port" label="&action.port;"
-                      command="ch-cmd-port"/>
-                  <menuitem id="ch-status-dns"  label="&action.dns;"
-                      command="ch-cmd-dns"/>
-                  <menuseparator/>
-                  <menuitem id="ch-status-preferences" label="&preferences;"
-                      command="ch-cmd-pref"/>
-                  <menuitem id="ch-status-about" label="&about;"
-                      command="ch-cmd-about"/>
-              </menupopup>
-          </toolbarbutton>
-      </statusbarpanel>
-  </statusbar>
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton type="menu-button" id="ch-status-icon"
+            label="&checkhost;" tooltiptext="&checkhost;"
+            command="ch-cmd-check-default">
+        <menupopup>
+            <menuitem id="ch-status-info"
+                label="&action.information;" command="ch-cmd-info"/>
+            <menuitem id="ch-status-ping" label="&action.ping;"
+                command="ch-cmd-ping"/>
+            <menuitem id="ch-status-http" label="&action.http;"
+                command="ch-cmd-http"/>
+            <menuitem id="ch-status-port" label="&action.port;"
+                command="ch-cmd-port"/>
+            <menuitem id="ch-status-dns"  label="&action.dns;"
+                command="ch-cmd-dns"/>
+            <menuseparator/>
+            <menuitem id="ch-status-preferences" label="&preferences;"
+                command="ch-cmd-pref"/>
+            <menuitem id="ch-status-about" label="&about;"
+                command="ch-cmd-about"/>
+        </menupopup>
+    </toolbarbutton>
+  </toolbarpalette>
 </overlay>
