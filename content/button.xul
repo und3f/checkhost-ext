@@ -7,9 +7,6 @@
 <overlay id="checkhost" 
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <script type="application/x-javascript"
-      src="chrome://checkhost/content/checkhost.js" />
-
   <commandset>
       <command id="ch-cmd-check-default" oncommand="CheckHost.check(event)"/>
       <command id="ch-cmd-check-link" oncommand="CheckHost.checkLink(event)"/>
@@ -57,4 +54,8 @@
         </menupopup>
     </toolbarbutton>
   </toolbarpalette>
+
+  <script type="application/x-javascript"
+      src="chrome://checkhost/content/checkhost.js" />
+
 </overlay>

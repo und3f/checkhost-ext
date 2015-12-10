@@ -7,13 +7,17 @@ var CheckHost = new (function() {
     var context_integration;
 
     var set_default_action = function(new_default_action) {
-        if (default_action !== undefined)
-            document.getElementById("ch-button-" + default_action)
-                .removeAttribute("default");
+        console.log('default action', default_action, new_default_action);
+        if (default_action !== undefined) {
+            var button = document.getElementById("ch-button-" + default_action);
+            if (button != null)
+                button.removeAttribute("default");
+        }
 
         default_action = new_default_action;
-        document.getElementById("ch-button-" + default_action)
-            .setAttribute("default", true);
+        var button = document.getElementById("ch-button-" + default_action);
+        if (button != null) 
+            button.setAttribute("default", true);
     }
 
     this.initialize = function() {
