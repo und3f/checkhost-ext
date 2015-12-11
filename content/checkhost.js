@@ -151,7 +151,7 @@ var CheckHost = new (function() {
     }
 
     this.open_new_tab = function(url) {
-        var tab = gBrowser.addTab(url);
+        var tab = gBrowser.addTab(url, {relatedToCurrent: true});
         gBrowser.selectedTab = tab;
     }
 
