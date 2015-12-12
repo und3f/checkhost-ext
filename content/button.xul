@@ -46,6 +46,8 @@
                 command="ch-cmd-port"/>
             <menuitem id="ch-button-dns"  label="&action.dns;"
                 command="ch-cmd-dns"/>
+            <menuitem id="ch-button-udp"  label="&action.udp;"
+                command="ch-cmd-udp"/>
             <menuseparator/>
             <menuitem id="ch-button-preferences" label="&preferences;"
                 command="ch-cmd-pref"/>
