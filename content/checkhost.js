@@ -1,5 +1,6 @@
 //Components.utils.import("resource://checkhost/integrators.js");
 Components.utils.import("resource://checkhost/pref_listener.js");
+Components.utils.import("resource://checkhost/install_button.js");
 
 var CheckHost = new (function() {
     var slaves;
@@ -7,15 +8,14 @@ var CheckHost = new (function() {
     var context_integration;
 
     var set_default_action = function(new_default_action) {
-        console.log('default action', default_action, new_default_action);
         if (default_action !== undefined) {
-            var button = document.getElementById("ch-button-" + default_action);
-            if (button != null)
-                button.removeAttribute("default");
+            let old_button = document.getElementById("ch-button-" + default_action);
+            if (old_button != null)
+                old_button.removeAttribute("default");
         }
 
         default_action = new_default_action;
-        var button = document.getElementById("ch-button-" + default_action);
+        let button = document.getElementById("ch-button-" + default_action);
         if (button != null) 
             button.setAttribute("default", true);
     }
@@ -27,6 +27,11 @@ var CheckHost = new (function() {
         var prefs = Components.classes["@mozilla.org/preferences-service;1"]
             .getService(Components.interfaces.nsIPrefService);
         prefs = prefs.getBranch("extensions.checkhost.");
+
+        if ( !prefs.getBoolPref("integration.toolbar-button-installed") ) {
+            InstallButton(document, "nav-bar", "ch-toolbar-button");
+            prefs.setBoolPref("integration.toolbar-button-installed", true);
+        };
 
         var listener = new CheckHostPrefListener("extensions.checkhost.",
             function(branch, name) {
@@ -75,7 +80,6 @@ var CheckHost = new (function() {
                     .setAttribute('hidden',
                         !(context_integration && gContextMenu.onLink));
             }, false);
-
     };
 
     this.checkURL = function(target, check_type) {
