@@ -1,4 +1,12 @@
-#ch-tools-menu, #ch-toolbar-button,
+#ch-tools-menu,
 #ch-context-check-website, #ch-context-check-link {
+    list-style-image: url(chrome://checkhost/skin/checkhost-16.png);
+}
+
+#ch-toolbar-button {
+    list-style-image: url(chrome://checkhost/skin/checkhost-32.png);
+}
+
+toolbar[iconsize="small"] #ch-toolbar-button {
     list-style-image: url(chrome://checkhost/skin/checkhost-16.png);
 }
