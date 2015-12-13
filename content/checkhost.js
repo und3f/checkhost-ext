@@ -1,4 +1,3 @@
-//Components.utils.import("resource://checkhost/integrators.js");
 Components.utils.import("resource://checkhost/pref_listener.js");
 Components.utils.import("resource://checkhost/install_button.js");
 
